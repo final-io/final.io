@@ -1,0 +1,12 @@
+{% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | split: '/'%}
+{% assign lang = paths[1] %}
+<div id="sidebar" class="sidebar" style="position: static;box-shadow: none" data-color="green" data-background-color="none" data-image="/assets/img/sidebar-1.jpg">
+  <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+  <div class="sidebar-wrapper">
+    {% include sidebar/sidebar-menu.html %}
+  </div>
+</div>

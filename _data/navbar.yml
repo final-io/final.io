@@ -1,7 +1,7 @@
 # 导航条配置
 
 # 导航
-navs:
+right:
   - label: 首页
     icon: home
     type: link

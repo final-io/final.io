@@ -1,0 +1,18 @@
+logo: /assets/images/logos/spring.svg
+name: DevOps
+menus:
+  - id: final-framework
+    icon: home
+    name: 'Final Framework'
+  - id: final-data
+    icon: save
+    name: 'Final Data'
+  - id: final-boot
+    icon: do_not_disturb_on_total_silence
+    name: 'Final Boot'
+  - id: final-cloud
+    icon: cloud
+    name: 'Final Cloud'
+  - id: auto
+    icon: hdr_auto
+    name: 'Final Auto'
