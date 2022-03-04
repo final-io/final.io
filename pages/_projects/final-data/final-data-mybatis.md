@@ -19,3 +19,4 @@ formatterOn: "@formatter:on"
 
 * **通用Mapper**：内置`AbsMapper`通用Mapper，满足大部分业务场景下的数据CRUD操作。
 * **全局分页**：基于`PageHelper`实现全局的分页操作。
+* 枚举、Json等扩展[类型映射器(TypeHandlers)](#)。
