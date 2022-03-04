@@ -1,6 +1,5 @@
 ---
 formatterOff: "@formatter:off"
-layout: projects
 title: Final Annotation Core
 subtitle: final-annotation-core 
 summary: final-annotation-core

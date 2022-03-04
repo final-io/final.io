@@ -1,10 +1,9 @@
-<nav class="navbar navbar-color-on-scroll navbar-transparent  fixed-top  navbar-expand-lg bg-primary"
-     color-on-scroll="100">
-  <div class="container">
+<nav class="navbar navbar-expand-lg z-index-sticky fixed-top" id="navbarBlur" data-scroll="true">
+  <div class="container-fluid py-1 px-3">
     <a class="navbar-brand font-weight-bold" href="/index.html">
       <div class="justify-content-center">
-        <img class="me-2" src="/assets/img/illustrations/falcon.png" alt="" width="32" height="32">
-        <span class="ml-2">iFinal</span>
+        <img class="me-2" src="https://static.ifinal.io/favicons/favicon.png" alt="" width="32" height="32">
+        <span class="ml-2">Final</span>
       </div>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
@@ -14,31 +13,104 @@
       <span class="navbar-toggler-icon icon-bar"></span>
       <span class="navbar-toggler-icon icon-bar"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 pe-5" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <div class="input-group input-group-outline">
+          <label class="form-label">Search here</label>
+          <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+        </div>
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+
+        <li class="nav-item dropdown px-3">
+            <a href="#" class="dropdown-toggle " data-bs-toggle="dropdown" id="navbarDropdownMenuLink2">
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+              <li>
+                <a class="dropdown-item" href="/projects/final-boot">
+                  Final Boot
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/projects/final-framework">
+                  Final Framework
+                </a>
+              </li>
+            </ul>
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="https://docs.ifinal.io" data-toggle="tooltip" data-placement="bottom" title="文档">
-            <i class="material-icons">book</i>Docs
+          <a href="../../pages/authentication/signin/illustration.html" class="nav-link text-body p-0 position-relative" target="_blank">
+            <i class="material-icons me-sm-1">
+              account_circle
+            </i>
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-item nav-link dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <i class="material-icons">menu_book</i>
-            Projects
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-            <a class="dropdown-item dropdown-flag-holder" href="/projects/final-boot">
-              Final Boot
-            </a>
-            <a class="dropdown-item dropdown-flag-holder" href="/projects/final-framework">
-              Final Framework
-            </a>
-          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://blog.ifinal.io" data-toggle="tooltip" data-placement="bottom" title="博客">
-            <i class="material-icons">auto_stories</i>Blog
+        <li class="nav-item px-3">
+          <a href="javascript:;" class="nav-link text-body p-0">
+            <i class="material-icons fixed-plugin-button-nav cursor-pointer">
+              settings
+            </i>
           </a>
+        </li>
+        <li class="nav-item dropdown pe-2">
+          <a href="javascript:;" class="nav-link text-body p-0 position-relative" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="material-icons cursor-pointer">
+              notifications
+            </i>
+            <span class="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-danger border border-white small py-1 px-2">
+                  <span class="small">11</span>
+                  <span class="visually-hidden">unread notifications</span>
+                </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end p-2 me-sm-n4" aria-labelledby="dropdownMenuButton">
+            <li class="mb-2">
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex align-items-center py-1">
+                  <span class="material-icons">email</span>
+                  <div class="ms-2">
+                    <h6 class="text-sm font-weight-normal my-auto">
+                      Check new messages
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex align-items-center py-1">
+                  <span class="material-icons">podcasts</span>
+                  <div class="ms-2">
+                    <h6 class="text-sm font-weight-normal my-auto">
+                      Manage podcast session
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex align-items-center py-1">
+                  <span class="material-icons">shopping_cart</span>
+                  <div class="ms-2">
+                    <h6 class="text-sm font-weight-normal my-auto">
+                      Payment successfully completed
+                    </h6>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

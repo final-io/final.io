@@ -1,6 +1,5 @@
 ---
 formatterOff: "@formatter:off"
-layout: projects
 title: Final Data Mybatis 
 subtitle: final-data-mybatis 
 summary: final-data-mybatis

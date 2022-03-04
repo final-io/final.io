@@ -30,6 +30,7 @@
 
       $this.toc();
       $this.highlight();
+      $this.initHeader();
 
     },
     methods: {
@@ -174,22 +175,30 @@
         converter.setFlavor('github');
         let html = converter.makeHtml(content);
         document.getElementById('markdown').innerHTML = html;
-        anchors.add();
+        // anchors.add();
       },
       toc() {
-        $('#toc').toc({
-          headers: 'article h2,article h3, article h4, article h5, article h6',
-          classes: {
-            item: "nav-item fs--1",
-            list: "nav"
-          }
-        });
+        // $('#toc').toc({
+        //   headers: 'article h2,article h3, article h4, article h5, article h6',
+        //   classes: {
+        //     item: "nav-item fs--1",
+        //     list: "nav"
+        //   }
+        // });
       },
       highlight() {
         // document.querySelectorAll('pre code').forEach((block) => {
         //   hljs.highlightBlock(block);
         // });
         hljs.highlightAll();
+      },
+      initHeader() {
+        console.log("初始化Header");
+        $(".markdown h2,.markdown h3").each(function () {
+          let content = $(this).text();
+          $(this).html(`<span class="content">${content}</span>`)
+          console.log(content);
+        })
       },
       gitlak() {
         var gitalk = new Gitalk({
