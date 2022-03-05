@@ -11,3 +11,7 @@ formatterOn: "@formatter:on"
 ---
 
 # final-boot
+
+Final Boot 集成众多流行开源框架，旨在简化Java后端开发者的学习成本。
+
+## 特性（Features）
