@@ -1,0 +1,29 @@
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        page: {
+          collection: "{{ page.collection }}",
+          paths: {{ paths | jsonify }},
+          title: "{{ page.title }}",
+          tags: {{ page.tags | jsonify }},
+          menus: [],
+          module: "{{ module }}",
+        },
+        modules: {{ site.data.modules | jsonify }},
+        theme: "light",
+        sidebar: {{ site.data.sidebar[page.collection] | jsonify }},
+        author: {{ site.data.authors[page.author] | jsonify }},
+        markdown: {},
+        hash: {},
+        post: {},
+        reload: true
+      }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+  })
+  .mount('#navbar')
+</script>

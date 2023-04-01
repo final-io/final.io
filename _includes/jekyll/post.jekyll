@@ -1,4 +1,4 @@
-{% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | split: '/' %}
+{% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | replace: '.html' : '' | split: '/' %}
 <script>
   Vue.createApp({
     data() {
@@ -31,6 +31,18 @@
       $this.toc();
       $this.highlight();
       $this.initHeader();
+
+      var gitalk = new Gitalk({
+        clientID: 'd5980c0f53133a01c696',
+        clientSecret: '98ca40d7ad860c9455ae3fd04675e53b4900aa44',
+        repo: 'docs.ifinal.io',
+        owner: 'final-io',
+        admin: ['ilikly'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
 
     },
     methods: {
@@ -178,13 +190,14 @@
         // anchors.add();
       },
       toc() {
-        // $('#toc').toc({
-        //   headers: 'article h2,article h3, article h4, article h5, article h6',
-        //   classes: {
-        //     item: "nav-item fs--1",
-        //     list: "nav"
-        //   }
-        // });
+        $('#terms-sidebar').toc({
+          headers: 'article h2,article h3, article h4, article h5, article h6',
+          showEffect: 'slideDown',
+          classes: {
+            item: "nav-item",
+            list: ""
+          }
+        });
       },
       highlight() {
         // document.querySelectorAll('pre code').forEach((block) => {
@@ -211,9 +224,9 @@
           distractionFreeMode: false  // Facebook-like distraction free mode
         })
         //
-        gitalk.render('gitalk-container', function (data) {
-          console.log(data);
-        });
+        //gitalk.render('gitalk-container', function (data) {
+        //  console.log(data);
+        //});
       },
       mermaid() {
         mermaid.initialize({

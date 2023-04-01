@@ -1,0 +1,21 @@
+---
+layout: null
+---
+{% assign articles = site.articles | where: "layout", "post" | sort: "date" | reverse %}
+[
+{% for post in articles %}
+    {
+    "name"    : "{{ post.title }}",
+    "title"    : "{{ post.title | escape }}",
+    "summary"    : "{{ post.summary | escape }}",
+    "collection"    : "{{ post.collection }}",
+    "categories" : {{ post.categories | jsonify }},
+    "tags"     : {{ post.tags | jsonify }},
+    "url"      : "{{ site.baseurl }}{{ post.url }}",
+    "banner"      : "{{ post.banner }}",
+    "mark"     : {{ post.mark | jsonify }},
+    "date"     : "{{ post.date | date: "%Y-%m-%d %H:%m" }}",
+    "author"   : {{ site.data.authors[post.author] | jsonify }}
+    } {% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
