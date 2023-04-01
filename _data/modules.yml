@@ -1,8 +1,12 @@
+- id: final
+  logo: https://static.ifinal.io/favicons/favicon.png
+  name: Final
+  link: /final/overview
 - id: spring
-  logo: /assets/images/logos/spring.svg
+  logo: /assets/logos/spring.svg
   name: Spring
   link: /spring/overview
-- id: devops
-  logo: /assets/images/logos/spring.svg
-  name: Devops
-  link: /devops/overview
+- id: mybatis
+  logo: https://pic2.zhimg.com/v2-f99413bba7530972fbc05ee8bceee66e_1440w.jpg?source=172ae18b
+  name: Mybatis
+  link: /mybatis/overview

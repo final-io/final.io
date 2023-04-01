@@ -20,15 +20,59 @@ version: 1.0
 formatterOn: "@formatter:on"
 ---
 
-<section class="py-3 bg-light shadow-sm">
+<section class="py-3 shadow-sm">
     <div class="container">
         <div class="container">
             <div class="col-md-12">
                 {% for post in paginator.posts %}
-                <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-                <p class="author">
-                    <span class="date">{{ post.date }}</span>
-                </p>
+
+
+                <div class="card mb-3">
+                    <a href="{{ post.url }}">
+                        <img class="card-img-top" src="{{ post.banner }}" alt="">
+                        <div class="card-body">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col">
+                                    <div class="d-flex">
+                                        <div class="calendar me-2">
+                                            <span class="calendar-month">{{ post.date | date: "%b" }}</span>
+                                            <span class="calendar-day">{{ post.date | date: "%d" }}</span>
+                                        </div>
+                                        <div class="flex-1 fs--1">
+                                            <h5 class="fs-0">{{ post.title }}</h5>
+                                            <p class="mb-0">by <a href="#!">{{ post.author }}</a></p>
+                                            <span class="fs-0 text-warning fw-semi-bold">{{ post.date | date: "%Y" }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-auto mt-4 mt-md-0">
+                                    <button class="btn btn-falcon-default btn-sm me-2" type="button">
+                                        <svg class="svg-inline--fa fa-heart fa-w-16 text-danger me-1" aria-hidden="true"
+                                             focusable="false" data-prefix="fas" data-icon="heart" role="img"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                            <path fill="currentColor"
+                                                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
+                                        </svg>
+                                        <!-- <span class="fas fa-heart text-danger me-1"></span> Font Awesome fontawesome.com -->
+                                        235
+                                    </button>
+                                    <button class="btn btn-falcon-default btn-sm me-2" type="button">
+                                        <svg class="svg-inline--fa fa-share-alt fa-w-14 me-1" aria-hidden="true"
+                                             focusable="false" data-prefix="fas" data-icon="share-alt" role="img"
+                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                                            <path fill="currentColor"
+                                                  d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"></path>
+                                        </svg>
+                                        <!-- <span class="fas fa-share-alt me-1"></span> Font Awesome fontawesome.com -->
+                                        Share
+                                    </button>
+                                    <button class="btn btn-falcon-primary btn-sm px-4 px-sm-5" type="button">Register
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 {% endfor %}
                 <div class="pagination">
                     {% if paginator.previous_page %}

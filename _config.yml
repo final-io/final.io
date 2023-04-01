@@ -35,8 +35,10 @@ kramdown:
 theme: minima
 encoding: UTF-8
 # 分页
-paginate: 1
+paginate: 10
 paginate_path: /blogs/page:num
+permalink: /:collection/:categories/:year/:month/:day/:title:output_ext
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -59,6 +61,7 @@ collections:
     output: true
   spring:
     output: true
+    layout: docs
   devops:
     output: true
   gh-pages:
@@ -70,19 +73,13 @@ collections:
     output: true
   post:
     output: true
+    permalink: /:collection/:categories/:year/:month/:day/:title:output_ext
 defaults:
   - scope:
       path: ""
     values:
-      layout: post
-      output: true
-      sidebar: true
       author: ilikly
-      type: post
-      mark:
-        pin: false
-        hot: false
-      banner: https://source.unsplash.com/random/800x400
+      banner: https://source.unsplash.com/random/1920x1200
   - scope:
       path: help
     values:
@@ -93,6 +90,16 @@ defaults:
     values:
       type: page
       sidebar: false
+  - scope:
+      path: posts
+    values:
+      layout: post
+      permalink: /:collection/:categories/:year/:month/:day/:title:output_ext
+  - scope:
+      path: ""
+      type: "spring"
+    values:
+      layout: docs
 # 插件配置
 gist:
   noscript: false

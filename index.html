@@ -22,34 +22,14 @@ formatterOn: "@formatter:on"
 
 <section class="py-3 bg-light shadow-sm">
     <div class="container">
-        <div class="container">
-            <div class="col-md-12">
-                {% for post in paginator.posts %}
-                <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-                <p class="author">
-                    <span class="date">{{ post.date }}</span>
-                </p>
-                {% endfor %}
-                <div class="pagination">
-                    {% if paginator.previous_page %}
-                    <a href="{{ paginator.previous_page_path }}" class="previous">
-                        Previous
-                    </a>
-                    {% else %}
-                    <span class="previous">Previous</span>
-                    {% endif %}
-                    <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
-                    {% if paginator.next_page %}
-                    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-                    {% else %}
-                    <span class="next ">Next</span>
-                    {% endif %}
-                </div>
-
-            </div>
+        <div class="row flex-center">
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="https://static.ifinal.io/favicons/favicon.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="45" src="../assets/img/logos/b&amp;w/11.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="30" src="../assets/img/logos/b&amp;w/2.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="30" src="../assets/img/logos/b&amp;w/4.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="35" src="../assets/img/logos/b&amp;w/1.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="../assets/img/logos/b&amp;w/10.png" alt=""></div>
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="../assets/img/logos/b&amp;w/12.png" alt=""></div>
         </div>
-    </div>
+    </div><!-- end of .container-->
 </section>
-

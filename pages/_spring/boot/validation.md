@@ -1,12 +1,12 @@
 ---
-formatterOff: "@formatter:off"
-subtitle: Spring Validation 
-summary: Validation
-typed: [Spring Validation]
-categories: [spring] 
-tags: [spring] 
+formatter: "@formatter:off"
+title: "Spring Validation"
+subtitle: 
+summary: 校验
+tags: [spring,validation] 
+date: 2023-03-20 09:50:48 +800 
 version: 1.0
-formatterOn: "@formatter:on"
+formatter: "@formatter:on"
 ---
 
 # Validation
