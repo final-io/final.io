@@ -2,11 +2,10 @@
 formatterOff: "@formatter:off"
 layout: page
 collection: blog
-title: iFinal blog
-subtitle: dispatcher-servlet
-summary: iFinal is a bolg which
+title: iFinal
+summary: iFinal is a static pages
 typed:
-  - host on github.
+  - hosted on github.
   - build with jekyll.
   - write by markdown.
 tags: []
@@ -20,16 +19,18 @@ version: 1.0
 formatterOn: "@formatter:on"
 ---
 
-<section class="py-3 bg-light shadow-sm">
+<section class="py-3 bg-100 shadow-sm">
     <div class="container">
         <div class="row flex-center">
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="https://static.ifinal.io/favicons/favicon.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="45" src="../assets/img/logos/b&amp;w/11.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="30" src="../assets/img/logos/b&amp;w/2.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="30" src="../assets/img/logos/b&amp;w/4.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="35" src="../assets/img/logos/b&amp;w/1.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="../assets/img/logos/b&amp;w/10.png" alt=""></div>
-            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1"><img class="landing-cta-img" height="40" src="../assets/img/logos/b&amp;w/12.png" alt=""></div>
+            {% for module in site.data.modules %}
+            <div class="col-3 col-sm-auto my-1 my-sm-3 px-x1">
+                <a href="{{ module.link }}">
+                    <img class="landing-cta-img" height="40" src="{{ module.logo }}" alt="">
+                </a>
+            </div>
+            {% endfor %}
         </div>
     </div><!-- end of .container-->
 </section>
+
+

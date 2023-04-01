@@ -61,7 +61,8 @@ collections:
     output: true
   spring:
     output: true
-    layout: docs
+  final:
+    output: true
   devops:
     output: true
   gh-pages:
@@ -79,7 +80,7 @@ defaults:
       path: ""
     values:
       author: ilikly
-      banner: https://source.unsplash.com/random/1920x1200
+      banner: https://source.unsplash.com/random/1880x400
   - scope:
       path: help
     values:
@@ -100,6 +101,13 @@ defaults:
       type: "spring"
     values:
       layout: docs
+      navbar: navbar-top
+  - scope:
+      path: ""
+      type: "final"
+    values:
+      layout: docs
+      navbar: navbar-top
 # 插件配置
 gist:
   noscript: false

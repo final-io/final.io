@@ -7,6 +7,6 @@
   name: Spring
   link: /spring/overview
 - id: mybatis
-  logo: https://pic2.zhimg.com/v2-f99413bba7530972fbc05ee8bceee66e_1440w.jpg?source=172ae18b
+  logo: /assets/logos/mybatis.png
   name: Mybatis
   link: /mybatis/overview
