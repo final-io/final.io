@@ -44,7 +44,7 @@ formatterOn: "@formatter:on"
                     <div class="card-body position-relative">
                         <h6>Blogs</h6>
                         <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-warning"
-                             data-countup="{&quot;endValue&quot;:58.386,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
+                             data-countup="{&quot;endValue&quot;:{{ site.posts.size }}}">
                             {{ site.posts.size }}
                         </div>
                         <a class="fw-semi-bold fs--1 text-nowrap" href="/blogs">See all
@@ -58,10 +58,10 @@ formatterOn: "@formatter:on"
                          style="background-image:url(https://prium.github.io/falcon/v3.15.0/assets/img/icons/spot-illustrations/corner-1.png);"></div>
                     <!--/.bg-holder-->
                     <div class="card-body position-relative">
-                        <h6>Orders<span class="badge badge-subtle-info rounded-pill ms-2">0.0%</span></h6>
+                        <h6>Collections</h6>
                         <div class="display-4 fs-4 mb-2 fw-normal font-sans-serif text-info"
-                             data-countup="{&quot;endValue&quot;:23.434,&quot;decimalPlaces&quot;:2,&quot;suffix&quot;:&quot;k&quot;}">
-                            23.43k
+                             data-countup="{&quot;endValue&quot;:{{ site.data.modules.size }}}">
+                            {{ site.data.modules.size }}
                         </div>
                         <a class="fw-semi-bold fs--1 text-nowrap" href="app/e-commerce/orders/order-list.html">All
                             orders

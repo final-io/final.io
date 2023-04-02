@@ -27,6 +27,8 @@ menus:
         menus:
           - id: exception-handler
             name: '@ExceptionHandler'
+      - id: handler-interceptor
+        name: 'HandlerInterceptor'
       - id: resolver
         name: 'HandlerMethodArgumentResolver'
   - id: security

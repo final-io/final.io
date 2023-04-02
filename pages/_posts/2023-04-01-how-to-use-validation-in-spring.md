@@ -1,8 +1,9 @@
 ---
 formatterOff: "@formatter:off"
+title: 如何在Spring中使用校验
 subtitle: Spring Validation 
-summary: Validation
-typed: [Spring Validation]
+summary: SpringValidation
+typed: ['@Validated','@Valid']
 categories: [spring] 
 tags: [spring] 
 version: 1.0

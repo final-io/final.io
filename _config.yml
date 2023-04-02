@@ -35,8 +35,15 @@ kramdown:
 theme: minima
 encoding: UTF-8
 # 分页
-paginate: 10
-paginate_path: /blogs/page:num
+#paginate: 10
+#paginate_path: /blogs/page:num
+pagination:
+  enabled: true
+  collection: 'posts'
+  per_page: 1
+  permalink: '/blogs/:num/index.html'
+  extension: html
+  indexpage: '/blogs'
 permalink: /:collection/:categories/:year/:month/:day/:title:output_ext
 
 sass:
@@ -52,8 +59,8 @@ plugins:
   - jekyll-default-layout
   - jekyll-gist
   - jekyll-optional-front-matter
-  - jekyll-paginate
-#  - jekyll-paginate-v2
+#  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-titles-from-headings
 collections_dir: pages
 collections:

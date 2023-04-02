@@ -20,8 +20,8 @@ group :jekyll_plugins do
   gem "kramdown-syntax-coderay"
   gem 'jekyll-relative-links'
   gem "jekyll-github-metadata"
-  gem "jekyll-paginate"
-#   gem "jekyll-paginate-v2"
+#  gem "jekyll-paginate"
+  gem "jekyll-paginate-v2"
   gem "jekyll-default-layout"
   gem "jekyll-coffeescript"
   gem "jekyll-optional-front-matter"
