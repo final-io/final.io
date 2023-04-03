@@ -7,34 +7,35 @@
 
 {% include navbar/navbar.html %}
 
-<section class="py-0 overflow-hidden" id="banner" data-bs-theme="light">
-    <div class="bg-holder overlay"
-         style="background-image:url({{ page.banner }});background-position: center bottom;"></div>
-    <!--/.bg-holder-->
-    <div class="container">
-        <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-            <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a
-                    class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!">
+<main>
+
+
+    <section class="py-0 overflow-hidden" id="banner" data-bs-theme="light">
+        <div class="bg-holder overlay"
+             style="background-image:url({{ page.banner }});background-position: center bottom;"></div>
+        <!--/.bg-holder-->
+        <div class="container">
+            <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
+                <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start"><a
+                        class="btn btn-outline-danger mb-4 fs--1 border-2 rounded-pill" href="#!">
                 <span class="me-2"
                       role="img"
                       aria-label="Gift">🎁</span>Final</a>
-                <h1 class="title text-white">{{ page.summary }}</h1>
-                <h2><span class="typed-text font-weight-bold text-white"
-                          data-typed-text='{{ page.typed | jsonify }}'></span></h2>
+                    <h1 class="title text-white">{{ page.summary }}</h1>
+                    <h2><span class="typed-text font-weight-bold text-white"
+                              data-typed-text='{{ page.typed | jsonify }}'></span></h2>
+                </div>
+                <div class="col-xl-7 offset-xl-1 align-self-end mt-4 mt-xl-0"><a class="img-landing-banner rounded"
+                                                                                 href="../index.html"><img
+                        class="img-fluid"
+                        src="../assets/img/generic/dashboard-alt.jpg"
+                        alt=""></a></div>
             </div>
-            <div class="col-xl-7 offset-xl-1 align-self-end mt-4 mt-xl-0"><a class="img-landing-banner rounded"
-                                                                             href="../index.html"><img class="img-fluid"
-                                                                                                       src="../assets/img/generic/dashboard-alt.jpg"
-                                                                                                       alt=""></a></div>
-        </div>
-    </div><!-- end of .container-->
-</section>
-
-<div class="main main-raised" id="app">
+        </div><!-- end of .container-->
+    </section>
 
     {{ content }}
-
-</div>
+</main>
 
 {% include scripts.html %}
 </body>
