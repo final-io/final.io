@@ -57,6 +57,15 @@ menus:
         menus:
           - id: final-web
             name: 'Final Web'
+      - id: final-data
+        name: 'Final Data'
+        menus:
+          - id: orm
+            name: 'ORM'
+          - id: query
+            name: 'Query'
+          - id: api
+            name: 'API'
       - id: final-mybatis
         name: Final Mybatis
         menus:
