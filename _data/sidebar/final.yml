@@ -20,8 +20,8 @@ menus:
     menus:
       - id: api
         name: 'API'
-      - id: orm
-        name: 'ORM'
+      - id: data
+        name: '数据'
       - id: pageable
         name: 'Pageable'
       - id: query
