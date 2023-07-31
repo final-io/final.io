@@ -52,6 +52,24 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
+      - name: Show Docker info
+        run: docker version
+      - name: Login to Docker
+        run: sudo docker login -u  ${{ secrets.DOCKER_USERNAME }}  -p  ${{ secrets.DOCKER_PASSWORD }}  ccr.ccs.tencentyun.com
+      - name: Build and push
+        run: |
+          sha=${{ github.sha }}
+          tag="v$GITHUB_RUN_NUMBER.$GITHUB_REF_NAME.$GITHUB_ACTOR."${sha: 0:7}"."$(date "+%Y.%m.%d.%H.%M.%S")
+          echo "build tag:${tag}"
+          echo $tag
+          echo "docker build..."
+          docker build -t ifinal-io:$tag .
+          echo "docker tag..."
+          sudo docker tag ifinal-io:$tag ccr.ccs.tencentyun.com/ifinal/ifinal-io:$tag
+          echo "docker push..."
+          sudo docker push ccr.ccs.tencentyun.com/ifinal/ifinal-io:$tag
+          echo "finish..."
+          echo "deploy:${tag}"
 
   # Deployment job
   deploy:

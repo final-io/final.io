@@ -1,0 +1,55 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: ci
+
+on:
+  push:
+    branches: [ ]
+  pull_request:
+    branches: [ ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出存储库
+        uses: actions/checkout@v2
+
+      - name: 设置Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14  # 将其更改为所需的Node.js版本
+
+      - name: 安装依赖
+        run: npm install
+
+      - name: 构建
+        run: npm run build
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Show Docker info
+        run: docker version
+      - name: Login to Docker
+        run: sudo docker login -u cn-east-3@WYBDJDGZZIPA1VRSZFW4 -p 44b2d41125b50208b5ca85f8429441de107b50c9634ec9b05d7cc0bac2a2a3ca swr.cn-east-3.myhuaweicloud.com
+      - name: Build and push
+        run: |
+          sha=${{ github.sha }}
+          tag="v$GITHUB_RUN_NUMBER.$GITHUB_REF_NAME.$GITHUB_ACTOR."${sha: 0:7}"."$(date "+%Y.%m.%d.%H.%M.%S")
+          echo "build tag:${tag}"
+          echo $tag
+          echo "docker build..."
+          docker build  -t vi-pages:$tag .
+          echo "docker tag..."
+          sudo docker tag vi-pages:$tag swr.cn-east-3.myhuaweicloud.com/cdkzy/vi-pages:$tag
+          echo "docker push..."
+          sudo docker push swr.cn-east-3.myhuaweicloud.com/cdkzy/vi-pages:$tag
+          echo "finish..."
+          echo "deploy:${tag}"
+         
+
+
+
