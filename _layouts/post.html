@@ -76,6 +76,20 @@
 
                         </div>
                         <div class="card-footer">
+                            <div class="row d-flex">
+                                <div class="col-6">
+                                    {% if page.next %}
+                                    <a href="{{ page.next.url }}">上一篇:{{ page.next.title }}</a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    {% if page.previous %}
+                                    <a href="{{ page.previous.url }}">下一篇:{{ page.previous.title }}</a>
+                                    {% endif %}
+                                </div>
+
+
+                            </div>
                             <div class="gitalk-container" id="gitalk-container"></div>
                         </div>
                     </div>
