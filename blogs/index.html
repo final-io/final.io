@@ -25,7 +25,9 @@ formatterOn: "@formatter:on"
                 {% for post in paginator.posts %}
                 <div class="card mb-3">
                     <a href="{{ post.url }}">
-                        <img class="card-img-top" src="{{ post.banner }}?w=1880&h=400&fit=crop&url={{post.url}}" alt="">
+                        <img class="card-img-top" style="height: 400px; object-fit: cover"
+                             src="{{ post.banner }}?h=400&fit=crop&url={{post.url}}"
+                             alt="">
                         <div class="card-body">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col">
@@ -36,7 +38,7 @@ formatterOn: "@formatter:on"
                                         </div>
                                         <div class="flex-1 fs--1">
                                             <h5 class="fs-0">{{ post.title }}</h5>
-                                            <p class="mb-0">by <a href="#!">{{ post.author }}</a></p>
+                                            <p class="mb-0"><a href="#!">{{ site.data.authors[post.author].name }}</a></p>
                                             <span class="fs-0 text-warning fw-semi-bold">{{ post.date | date: "%Y" }}</span>
                                         </div>
                                     </div>
