@@ -1,8 +1,21 @@
+# 作者标识
 iimik:
-  name: 程序员米克
+#  名称
+  name: 米克
+#  头像
   avatar: https://avatars.githubusercontent.com/u/26331697
+#  职称
   position: 软件工程师
-  company: 多点生活
+#  公司
+  company: 自由职业
+#  位置
   location: 成都，中国
+#  个人主页
+  home-page: https://github.com/iimik
+#  社交
+  socials:
+#    Github
+    github:
+      account: iimik
   github: iimik
   github-follow: https://github.com/iimik

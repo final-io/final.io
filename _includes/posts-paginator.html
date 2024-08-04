@@ -1,0 +1,54 @@
+<!--文档分页器-->
+<section class="py-3 shadow-sm">
+    <div class="container">
+        <div class="container">
+            <div class="col-md-12">
+                {% for post in posts %}
+                <div class="card mb-3">
+                    <a href="{{ post.url }}">
+                        <img class="card-img-top" style="height: 400px; object-fit: cover"
+                             src="{{ post.banner }}?h=400&fit=crop&url={{post.url}}"
+                             alt="">
+                        <div class="card-body">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col">
+                                    <div class="d-flex">
+                                        <div class="calendar me-2">
+                                            <span class="calendar-month">{{ post.date | date: "%b" }}</span>
+                                            <span class="calendar-day">{{ post.date | date: "%d" }}</span>
+                                        </div>
+                                        <div class="flex-1 fs--1">
+                                            <h5 class="fs-0">{{ post.title }}</h5>
+                                            <p class="mb-0">
+                                                <a href="{{ site.data.authors[post.author].home-page }}"
+                                                   target="_blank"
+                                                   data-desc="作者主页"
+                                                >
+                                                    {{ site.data.authors[post.author].name }}
+                                                </a>
+                                            </p>
+                                            <span class="fs-0 text-warning fw-semi-bold">{{ post.date | date: "%Y" }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                <div class="pagination">
+                    {% if paginator.previous_page %}
+                    <a href="{{ paginator.previous_page_path }}" class="previous">
+                        上一页
+                    </a>
+                    {% endif %}
+                    <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+                    {% if paginator.next_page %}
+                    <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
