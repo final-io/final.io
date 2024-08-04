@@ -89,7 +89,7 @@ defaults:
       path: ""
     values:
       author: iimik
-      banner: https://source.unsplash.com/random/1880x400
+      banner: https://images.unsplash.com/photo-1507842217343-583bb7270b66
   - scope:
       path: help
     values:
